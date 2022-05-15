@@ -3,10 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
+import { ActorAltaComponent } from './componentes/actor/actor-alta/actor-alta.component';
+import { ActorListadoComponent } from './componentes/actor/actor-listado/actor-listado.component';
+import { ActorPeliculaComponent } from './componentes/actor/actor-pelicula/actor-pelicula.component';
+import { MenuComponent } from './componentes/menu/menu.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BusquedaComponent,
+    ActorAltaComponent,
+    ActorListadoComponent,
+    ActorPeliculaComponent,
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

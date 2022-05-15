@@ -9,6 +9,7 @@ import { ActorListadoComponent } from './componentes/actor/actor-listado/actor-l
 import { ActorPeliculaComponent } from './componentes/actor/actor-pelicula/actor-pelicula.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { PeliculaAltaComponent } from './componentes/peliculas/pelicula-alta/pelicula-alta.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './componentes/footer/footer.component';
     ActorListadoComponent,
     ActorPeliculaComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    PeliculaAltaComponent
   ],
   imports: [
     BrowserModule,

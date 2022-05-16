@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Actor } from 'src/app/modelos/Actor';
+import { ActoresService } from 'src/app/servicios/actores.service';
 
 @Component({
   selector: 'app-actor-alta',
@@ -13,7 +14,10 @@ export class ActorAltaComponent implements OnInit {
   forma !: FormGroup;
   actor:Actor|undefined;
 
-  public constructor(private fb: FormBuilder) {}
+  public constructor(
+    private fb: FormBuilder,
+    private actoresService: ActoresService
+    ) {}
 
   ngOnInit(): void {
     this.forma = this.fb.group({
@@ -36,6 +40,8 @@ export class ActorAltaComponent implements OnInit {
     this.actor = obj;
 
     console.log(this.actor);
+
+    this.actoresService.agregar(this.actor);
   }
 
   // CUSTOM VALIDATOR

@@ -16,7 +16,7 @@ export class TablaPaisesComponent implements OnInit {
   ngOnInit(): void {    
     this.paisesService.todos().subscribe(
         t => {
-          this.paises = t.slice(80, 84);
+          this.paises = t.slice(0, 3);
           // console.log(this.paises);
         }
       );

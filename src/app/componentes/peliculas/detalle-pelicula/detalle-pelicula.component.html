@@ -1,0 +1,15 @@
+<div *ngIf="pelicula" class="h-100 bg-light border rounded-3">
+    <img [src]="pelicula.foto" alt="" style="max-width: 100%;">
+    <div class="p-2">
+        <div class="d-flex align-items-center justify-content-between">
+            <h3>{{pelicula.nombre}}</h3>
+            <span class="text-secondary">{{pelicula.fechaEstreno}}</span>
+        </div>
+        <p class="text-muted">
+            {{pelicula.tipo}}
+        </p>
+        <p class="text-center text-primary">
+            {{pelicula.cantidadPublico}} espectadores
+        </p>
+    </div>
+</div>

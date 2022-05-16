@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { PeliculasService } from 'src/app/servicios/peliculas.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Pelicula } from 'src/app/modelos/Pelicula';
 
 @Component({
@@ -9,25 +8,15 @@ import { Pelicula } from 'src/app/modelos/Pelicula';
 })
 export class TablaPeliculaComponent implements OnInit {
 
-  peliculas: Array<Pelicula> = [];
+  @Input() peliculas: Array<Pelicula> = [];
+  @Output() peliculaSeleccionada: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private peliculasService: PeliculasService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    // this.peliculasService.todos().subscribe(
-    //     t => this.peliculas = t
-    //   );
-    
-    this.peliculasService.todas().subscribe(
-        t => {
-          this.peliculas = t;
-          console.log(this.peliculas)
-        }
-      );
-  }
+  ngOnInit(): void { }
 
   onDetallesClick(pelicula: Pelicula) {
-
+      this.peliculaSeleccionada.emit(pelicula);
   }
 
 }

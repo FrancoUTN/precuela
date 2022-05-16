@@ -6,9 +6,9 @@ import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 import { PeliculaAltaComponent } from './componentes/peliculas/pelicula-alta/pelicula-alta.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'login', pathMatch: 'full' },
+  // { path: '', redirectTo: 'bienvenido', pathMatch: 'full' },
   { path: 'busqueda', component: BusquedaComponent },
-  { path: 'actor/actoralta', component: ActorAltaComponent },
+  { path: 'actor/alta', component: ActorAltaComponent },
   { path: 'peliculas/alta', component: PeliculaAltaComponent },
   { path: 'actor/actorpelicula', component: ActorPeliculaComponent },
 ];

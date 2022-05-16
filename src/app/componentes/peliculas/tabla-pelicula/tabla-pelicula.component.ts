@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PeliculasService } from 'src/app/servicios/peliculas.service';
+import { Pelicula } from 'src/app/modelos/Pelicula';
 
 @Component({
   selector: 'app-tabla-pelicula',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablaPeliculaComponent implements OnInit {
 
-  constructor() { }
+  peliculas: Array<Pelicula> = [];
+
+  constructor(private peliculasService: PeliculasService) { }
 
   ngOnInit(): void {
+    // this.peliculasService.todos().subscribe(
+    //     t => this.peliculas = t
+    //   );
+    
+    this.peliculasService.todas().subscribe(
+        t => {
+          this.peliculas = t;
+          console.log(this.peliculas)
+        }
+      );
+  }
+
+  onDetallesClick(pelicula: Pelicula) {
+
   }
 
 }

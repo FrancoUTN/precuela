@@ -1,6 +1,6 @@
 export interface Pelicula {
     id:number;
-    Nombre:string;
+    nombre:string;
     tipo:string; // { terror, comedia, amor, otros }
     fechaEstreno:string; // ¿O Date?
     cantidadPublico:number;

@@ -1,0 +1,26 @@
+ [        
+    {
+        "id":1,
+        "nombre":"Qué se yo!",
+        "tipo":"Comedia",
+        "fechaEstreno":"2021",
+        "cantidadPublico":100,
+        "foto":"assets/peli.png"
+    },
+    {
+        "id":2,
+        "nombre":"Ni yo",
+        "tipo":"Ciencia ficción",
+        "fechaEstreno":"2020",
+        "cantidadPublico":200,
+        "foto":"assets/peli2.png"
+    },
+    {
+        "id":3,
+        "nombre":"Yo sí sé!",
+        "tipo":"Drama",
+        "fechaEstreno":"1998",
+        "cantidadPublico":300,
+        "foto":"assets/peli3.png"
+    }
+]

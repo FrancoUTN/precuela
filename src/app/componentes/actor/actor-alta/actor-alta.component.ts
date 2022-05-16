@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActorAltaComponent implements OnInit {
 
+  pais:any;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }

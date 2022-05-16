@@ -14,15 +14,11 @@ export class BusquedaComponent implements OnInit {
 
   constructor(private peliculasService: PeliculasService) { }
 
-  ngOnInit(): void {
-    // this.peliculasService.todos().subscribe(
-    //     t => this.peliculas = t
-    //   );
-    
+  ngOnInit(): void {    
     this.peliculasService.todas().subscribe(
         t => {
           this.jsonPeliculas = t;
-          console.log(this.jsonPeliculas)
+          // console.log(this.jsonPeliculas);
         }
       );
   }

@@ -25,6 +25,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { DetalleActorComponent } from './componentes/actor/detalle-actor/detalle-actor.component';
 import { DetallePaisComponent } from './componentes/actor/detalle-pais/detalle-pais.component';
 import { PeliculasActorComponent } from './componentes/actor/peliculas-actor/peliculas-actor.component';
+import { ModificadorComponent } from './componentes/modificador/modificador.component';
+import { EliminadorComponent } from './componentes/eliminador/eliminador.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { PeliculasActorComponent } from './componentes/actor/peliculas-actor/pel
     TablaActorComponent,
     DetalleActorComponent,
     DetallePaisComponent,
-    PeliculasActorComponent
+    PeliculasActorComponent,
+    ModificadorComponent,
+    EliminadorComponent
   ],
   imports: [
     BrowserModule,

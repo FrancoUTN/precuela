@@ -43,4 +43,12 @@ export class PeliculasService {
       }
     );
   }
+
+  eliminar(path:string) {
+    return this.coleccion.doc(path).delete();
+  }
+
+  alterar(data:any) {
+    return this.coleccion.doc(data.id).set(data);
+  }
 }

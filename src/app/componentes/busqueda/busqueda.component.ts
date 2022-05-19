@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PeliculasService } from 'src/app/servicios/peliculas.service';
-import { Pelicula } from 'src/app/modelos/Pelicula';
-import { FotosService } from 'src/app/servicios/fotos.service';
 
 @Component({
   selector: 'app-busqueda',
@@ -10,12 +8,24 @@ import { FotosService } from 'src/app/servicios/fotos.service';
 })
 export class BusquedaComponent implements OnInit {
 
-  peliculas: Array<Pelicula> = [];
-  pelicula: Pelicula|undefined;
+  peliculas: Array<any> = [];
+  pelicula: any;
 
   constructor(private peliculasService: PeliculasService) { }
 
   ngOnInit(): void {    
     this.peliculasService.llenarLista(this.peliculas);
+  }
+
+  onBorrarHandler() {
+    this.peliculasService.eliminar(this.pelicula.id);
+
+    this.pelicula = null;
+    this.peliculas = [];
+    this.peliculasService.llenarLista(this.peliculas);
+  }
+
+  onModificarHandler(pelicula:any) {
+    this.pelicula = pelicula;
   }
 }

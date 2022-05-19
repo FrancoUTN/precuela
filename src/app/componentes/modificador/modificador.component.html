@@ -1,0 +1,21 @@
+<div *ngIf="this.pelicula"
+    class="px-5 py-3 bg-light border rounded-3"
+    style="display:flex; flex-direction:column;align-items:center; height: 40vh;"
+>
+    <h2>Modificar</h2>
+    <form [formGroup]="forma" (ngSubmit)="aceptar()" class="h-75">
+        <div class="d-flex flex-column justify-content-around h-100">
+            <input type="text" class="form-control" formControlName="nombre">
+            <select name="select" class="form-select" formControlName="tipo">
+                <option value="Terror">Terror</option>
+                <option value="Comedia">Comedia</option>
+                <option value="Amor">Amor</option>
+                <option value="Otros">Otros</option>
+            </select>
+            <input type="number" class="form-control" formControlName="fechaEstreno">
+            <input type="number" class="form-control" formControlName="cantidadPublico">
+            <button class="btn btn-outline-secondary" type="button" (click)="aceptar()">Guardar cambios</button>
+        </div>
+        <p *ngIf="this.updated" class="text-success text-end">Hecho!</p>
+    </form>
+</div>

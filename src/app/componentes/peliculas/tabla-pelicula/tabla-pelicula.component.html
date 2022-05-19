@@ -1,4 +1,4 @@
-<div class="mb-5">
+<div *ngIf="!grilla" class="mb-5">
     <table class="table">
         <thead>
             <tr>
@@ -26,3 +26,21 @@
         </tbody>
     </table>
 </div>
+
+<div *ngIf="grilla" class="my-5 row">
+    <div class="col-4" *ngFor="let item of peliculas">
+        <input
+            type="image"
+            [src]="item.foto"
+            style="width: 100%; height: 30vh"
+            (click)="onDetallesClick(item)"
+        />
+    </div>
+</div>
+
+<button
+        type="button" class="btn btn-primary btn-circle mb-5"
+        (click)="this.grilla = !this.grilla"
+    >
+    Cambiar vista
+</button>

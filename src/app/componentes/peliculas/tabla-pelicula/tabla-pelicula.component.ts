@@ -11,6 +11,8 @@ export class TablaPeliculaComponent implements OnInit {
   @Input() peliculas: Array<Pelicula> = [];
   @Output() peliculaSeleccionada: EventEmitter<any> = new EventEmitter<any>();
 
+  grilla:boolean = false;
+
   constructor() { }
 
   ngOnInit(): void { }

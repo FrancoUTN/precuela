@@ -22,6 +22,8 @@ import { TablaActorComponent } from './componentes/actor/tabla-actor/tabla-actor
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { DetalleActorComponent } from './componentes/actor/detalle-actor/detalle-actor.component';
+import { DetallePaisComponent } from './componentes/actor/detalle-pais/detalle-pais.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     TablaPeliculaComponent,
     DetallePeliculaComponent,
     TablaPaisesComponent,
-    TablaActorComponent
+    TablaActorComponent,
+    DetalleActorComponent,
+    DetallePaisComponent
   ],
   imports: [
     BrowserModule,

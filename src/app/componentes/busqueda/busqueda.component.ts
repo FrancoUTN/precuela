@@ -13,26 +13,9 @@ export class BusquedaComponent implements OnInit {
   peliculas: Array<Pelicula> = [];
   pelicula: Pelicula|undefined;
 
-  constructor(
-    private peliculasService: PeliculasService,
-    private fotosService: FotosService) { }
+  constructor(private peliculasService: PeliculasService) { }
 
   ngOnInit(): void {    
     this.peliculasService.llenarLista(this.peliculas);
   }
-
-  // traerColeccion() {
-  //   this.peliculasService.retornarColeccion().subscribe(
-  //     (qs) => {
-  //       qs.forEach(
-  //         (doc) => {
-            
-  //           this.peliculas.push({id: doc.id, ...doc.data()})
-
-  //         }
-  //       );
-  //     }
-  //   );
-  // }
-
 }

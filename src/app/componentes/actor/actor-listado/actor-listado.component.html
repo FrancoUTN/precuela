@@ -1,1 +1,28 @@
-<p>actor-listado works!</p>
+<div class="mb-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>País</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of actores">
+                <td>{{item.nombre}}</td>
+                <td>{{item.apellido}}</td>
+                <td>
+                    <img [src]="item.pais.flags.png" style="width: 150px; height: 125px;">
+                </td>
+                <td>
+                    <button
+                        type="button" class="btn btn-primary btn-circle"
+                        (click)="onDetallesClick(item)"
+                    >
+                        Detalles
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

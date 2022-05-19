@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActoresService } from 'src/app/servicios/actores.service';
 
 @Component({
   selector: 'app-actor-pelicula',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActorPeliculaComponent implements OnInit {
 
-  constructor() { }
+  actores: Array<any> = [];
+  actor: any;
+
+  constructor(private actoresService: ActoresService) { }
 
   ngOnInit(): void {
+    this.actoresService.llenarLista(this.actores);
   }
-
 }

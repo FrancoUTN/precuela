@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 
 @Component({
   selector: 'app-actor-listado',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActorListadoComponent implements OnInit {
 
+  @Input() actores: Array<any> = [];
+  @Output() actorSeleccionado: EventEmitter<any> = new EventEmitter<any>();
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
+  onDetallesClick(actor: any) {
+      this.actorSeleccionado.emit(actor);
+  }
 }

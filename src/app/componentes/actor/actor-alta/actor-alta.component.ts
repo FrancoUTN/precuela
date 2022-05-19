@@ -13,6 +13,7 @@ export class ActorAltaComponent implements OnInit {
   pais:any;
   forma !: FormGroup;
   actor:Actor|undefined;
+  // actor:any;
 
   public constructor(
     private fb: FormBuilder,
@@ -21,27 +22,26 @@ export class ActorAltaComponent implements OnInit {
 
   ngOnInit(): void {
     this.forma = this.fb.group({
-      // 'id': ['4', [Validators.required]],
+      // 'id': ['', [Validators.required]],
       'nombre': ['', [Validators.required, this.spacesValidator]],
       'apellido': ['', Validators.required],
       // 'pais': ['', Validators.required],
       // 'edad': ['', [Validators.required, Validators.min(18), Validators.max(99)]],
       // 'sexo': ['', Validators.required]
-    });
+    });  
+
+    // this.actoresService.todos().subscribe(
+    //     t => console.log(t)
+    //   );
   }
 
-  public aceptar(): void {
-    // console.log(this.forma.getRawValue());
-    
+  public aceptar(): void {    
     let obj = this.forma.getRawValue();
-
     obj.pais = this.pais;
-
     this.actor = obj;
 
-    console.log(this.actor);
-
-    this.actoresService.agregar(this.actor);
+    // this.actoresService.agregar(this.actor).subscribe(response => {console.log(response)});
+    this.actoresService.agregar(this.actor).subscribe();
   }
 
   // CUSTOM VALIDATOR

@@ -1,7 +1,7 @@
 import { Pelicula } from "./Pelicula";
 
 export interface Actor {
-    // id:number;
+    id:number;
     nombre:string;
     apellido:string;
     pais:any;

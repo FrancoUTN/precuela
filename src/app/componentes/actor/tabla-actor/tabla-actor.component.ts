@@ -14,7 +14,7 @@ export class TablaActorComponent implements OnInit {
   constructor(private actoresService: ActoresService) { }
 
   ngOnInit(): void {    
-    this.actoresService.todos();     
+    this.actoresService.llenarLista(this.actores);
   }
 
   onActorClick(actor: any) {

@@ -1,89 +1,69 @@
 <div class="bg-light d-flex justify-content-center py-5">
-    <!-- <div class="container px-5"> -->
-        <!-- <main> -->
-            <!-- <div class="row g-5 mx-5 mb-5 w-75"> -->
-            <div class="row g-5 w-50">
-                <div class="col-md-5 col-lg-4 order-md-last">
+    <div class="row g-5 w-50">
+        <div class="col-md-5 col-lg-4 order-md-last">
 
-                    <app-tabla-actor (actorSeleccionado)="this.actor = $event"></app-tabla-actor>
+            <app-tabla-actor (actorSeleccionado)="this.actor = $event"></app-tabla-actor>
 
-                </div>
-                <div class="col-md-7 col-lg-8">
-                    <h4 class="mb-3">Formulario de alta</h4>
-        
-                    <form [formGroup]="forma" (ngSubmit)="aceptar()">
-                        <!-- <input type="hidden" formControlName="id"> -->
-        
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <label for="firstName" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" formControlName="nombre">
-                                <div class="invalid-feedback">
-                                Valid first name is required.
-                                </div>
-                            </div>        
-                            <div class="col-sm-6">
-                                <label for="lastName" class="form-label">Tipo</label>
-                                <select name="select" class="form-select" formControlName="tipo">
-                                    <option value="Terror">Terror</option>
-                                    <option value="Comedia">Comedia</option>
-                                    <option value="Amor">Amor</option>
-                                    <option value="Otros">Otros</option>
-                                </select>
-  
-                                <!-- <input type="text" class="form-control" formControlName="tipo"> -->
-
-                                <div class="invalid-feedback">
-                                Valid last name is required.
-                                </div>
-                            </div>                            
-                            <div class="col-sm-6">
-                                <label for="lastName" class="form-label">Fecha de estreno (año)</label>
-                                <input type="number" class="form-control" formControlName="fechaEstreno">
-                                <div class="invalid-feedback">
-                                Valid last name is required.
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <label for="lastName" class="form-label">Cantidad de público</label>
-                                <input type="number" class="form-control" formControlName="cantidadPublico">
-                                <div class="invalid-feedback">
-                                Valid last name is required.
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <label for="lastName" class="form-label">Foto</label>
-                                <input type="file" class="form-control" (change)="uploadFile($event)"/>
-                            </div>
-                            <div class="col-12" *ngIf="this.actor">
-                                <label for="address" class="form-label">Actor</label>
-                                <input
-                                    type="text" class="form-control" disabled
-                                    placeholder="{{actor.nombre}} {{actor.apellido}}"
-                                >
-                            </div>
-        
-                            <!-- <div>
-                                <span>Foto: </span>
-                                <input type="file" name="" id="">
-                            </div> -->
+        </div>
+        <div class="col-md-7 col-lg-8">
+            <h4 class="mb-3">Formulario de alta</h4>
+            <form [formGroup]="forma" (ngSubmit)="aceptar()">
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" formControlName="nombre">
+                        <div class="invalid-feedback">
+                        Valid first name is required.
                         </div>
-            
-                        <hr class="my-4">
-            
-                        <button class="w-100 btn btn-primary btn-lg" [disabled]="forma.invalid || !this.actor">
-                        Agregar
-                        </button>                
-                    </form>
-                    <div *ngIf="this.added">
-                        <p class="text-success" style="text-align: end;">
-                            Agregada!
-                        </p>
+                    </div>        
+                    <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Tipo</label>
+                        <select name="select" class="form-select" formControlName="tipo">
+                            <option value="Terror">Terror</option>
+                            <option value="Comedia">Comedia</option>
+                            <option value="Amor">Amor</option>
+                            <option value="Otros">Otros</option>
+                        </select>
+                        <div class="invalid-feedback">
+                        Valid last name is required.
+                        </div>
+                    </div>                            
+                    <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Fecha de estreno (año)</label>
+                        <input type="number" class="form-control" formControlName="fechaEstreno">
+                        <div class="invalid-feedback">
+                        Valid last name is required.
+                        </div>
                     </div>
-        
-                </div>
+                    <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Cantidad de público</label>
+                        <input type="number" class="form-control" formControlName="cantidadPublico">
+                        <div class="invalid-feedback">
+                        Valid last name is required.
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="lastName" class="form-label">Foto</label>
+                        <input type="file" class="form-control" (change)="uploadFile($event)"/>
+                    </div>
+                    <div class="col-12" *ngIf="this.actor">
+                        <label for="address" class="form-label">Actor</label>
+                        <input
+                            type="text" class="form-control" disabled
+                            placeholder="{{actor.nombre}} {{actor.apellido}}"
+                        >
+                    </div>
+                </div>    
+                <hr class="my-4">    
+                <button class="w-100 btn btn-primary btn-lg" [disabled]="forma.invalid || !this.actor">
+                Agregar
+                </button>                
+            </form>
+            <div *ngIf="this.added">
+                <p class="text-success" style="text-align: end;">
+                    Agregada!
+                </p>
             </div>
-        <!-- </main> -->
-    
-    <!-- </div> -->
+        </div>
+    </div>
 </div>

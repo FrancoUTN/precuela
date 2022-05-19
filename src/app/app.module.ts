@@ -13,15 +13,12 @@ import { ActorAltaComponent } from './componentes/actor/actor-alta/actor-alta.co
 import { ActorListadoComponent } from './componentes/actor/actor-listado/actor-listado.component';
 import { ActorPeliculaComponent } from './componentes/actor/actor-pelicula/actor-pelicula.component';
 import { MenuComponent } from './componentes/menu/menu.component';
-import { FooterComponent } from './componentes/footer/footer.component';
 import { PeliculaAltaComponent } from './componentes/peliculas/pelicula-alta/pelicula-alta.component';
 import { TablaPeliculaComponent } from './componentes/peliculas/tabla-pelicula/tabla-pelicula.component';
 import { DetallePeliculaComponent } from './componentes/peliculas/detalle-pelicula/detalle-pelicula.component';
 import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';
 import { TablaActorComponent } from './componentes/actor/tabla-actor/tabla-actor.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { DetalleActorComponent } from './componentes/actor/detalle-actor/detalle-actor.component';
 import { DetallePaisComponent } from './componentes/actor/detalle-pais/detalle-pais.component';
 import { PeliculasActorComponent } from './componentes/actor/peliculas-actor/peliculas-actor.component';
@@ -36,7 +33,6 @@ import { EliminadorComponent } from './componentes/eliminador/eliminador.compone
     ActorListadoComponent,
     ActorPeliculaComponent,
     MenuComponent,
-    FooterComponent,
     PeliculaAltaComponent,
     TablaPeliculaComponent,
     DetallePeliculaComponent,
@@ -54,8 +50,6 @@ import { EliminadorComponent } from './componentes/eliminador/eliminador.compone
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    // provideFirebaseApp(() => initializeApp(environment.firebase)),
-    // provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,

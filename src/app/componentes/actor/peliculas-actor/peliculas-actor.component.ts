@@ -10,7 +10,6 @@ export class PeliculasActorComponent implements OnInit {
 
   @Input() actor:any;
   peliculas:Array<any> = [];
-  // auxPeliculas:Array<any> = [];
 
   constructor(private peliculasService: PeliculasService) { }
 

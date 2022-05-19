@@ -24,6 +24,7 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { DetalleActorComponent } from './componentes/actor/detalle-actor/detalle-actor.component';
 import { DetallePaisComponent } from './componentes/actor/detalle-pais/detalle-pais.component';
+import { PeliculasActorComponent } from './componentes/actor/peliculas-actor/peliculas-actor.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { DetallePaisComponent } from './componentes/actor/detalle-pais/detalle-p
     TablaPaisesComponent,
     TablaActorComponent,
     DetalleActorComponent,
-    DetallePaisComponent
+    DetallePaisComponent,
+    PeliculasActorComponent
   ],
   imports: [
     BrowserModule,

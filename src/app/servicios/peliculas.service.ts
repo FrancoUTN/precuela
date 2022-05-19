@@ -24,9 +24,9 @@ export class PeliculasService {
     );
   }
 
-  // retornarColeccion() {
-  //   return this.coleccion.get();
-  // }
+  retornarColeccion() {
+    return this.coleccion.get();
+  }
 
   agregar(data: any) {
     return this.coleccion.add(data);

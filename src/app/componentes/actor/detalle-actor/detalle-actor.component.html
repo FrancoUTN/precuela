@@ -1,15 +1,8 @@
 <div *ngIf="actor" class="h-100 bg-light border rounded-3">
-    <!-- <img [src]="actor.pais.flags.png" alt="" style="width: 100%; max-height: 250px;"> -->
-    <div class="p-2">
-        <div class="d-flex align-items-center justify-content-between">
-            <h3>{{actor.nombre}} {{actor.apellido}}</h3>
-            <!-- <span class="text-secondary">{{actor.pais.name.common}}</span> -->
+    <div class="d-flex flex-column align-items-center justify-content-center">
+        <h2>Detalles:</h2>
+        <div class="d-flex flex-row align-items-center justify-content-center">
+            <h4>{{actor.nombre}} {{actor.apellido}}</h4>
         </div>
-        <!-- <p class="text-muted">
-            {{actor.tipo}}
-        </p>
-        <p class="text-center text-primary">
-            {{actor.cantidadPublico}} espectadores
-        </p> -->
     </div>
 </div>

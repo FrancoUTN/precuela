@@ -5,20 +5,15 @@
 
     <div class="row align-items-md-stretch">
       <div class="col-md-4">
-        <div class="h-100 p-5 bg-light border rounded-3">
-          <h2>Add borders</h2>
-          <p>Or, keep it light and add a border for some added 
-            definition to the boundaries of your content.</p>
-          <button class="btn btn-outline-secondary" type="button">Example button</button>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <app-detalle-actor [actor]="this.actor"></app-detalle-actor>
+        <app-peliculas-actor *ngIf="this.actor" [actor]="this.actor"></app-peliculas-actor>
       </div>
 
       <div class="col-md-4">
         <app-detalle-pais *ngIf="this.actor" [pais]="this.actor.pais"></app-detalle-pais>
+      </div>
+
+      <div class="col-md-4">
+        <app-detalle-actor [actor]="this.actor"></app-detalle-actor>
       </div>
     </div>  
     <footer class="pt-3 mt-4 text-muted border-top">

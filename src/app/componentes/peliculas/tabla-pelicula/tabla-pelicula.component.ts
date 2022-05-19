@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Pelicula } from 'src/app/modelos/Pelicula';
 
 @Component({
   selector: 'app-tabla-pelicula',
@@ -8,7 +7,7 @@ import { Pelicula } from 'src/app/modelos/Pelicula';
 })
 export class TablaPeliculaComponent implements OnInit {
 
-  @Input() peliculas: Array<Pelicula> = [];
+  @Input() peliculas: Array<any> = [];
   @Output() peliculaSeleccionada: EventEmitter<any> = new EventEmitter<any>();
 
   grilla:boolean = false;
@@ -17,7 +16,7 @@ export class TablaPeliculaComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  onDetallesClick(pelicula: Pelicula) {
+  onDetallesClick(pelicula: any) {
       this.peliculaSeleccionada.emit(pelicula);
   }
 

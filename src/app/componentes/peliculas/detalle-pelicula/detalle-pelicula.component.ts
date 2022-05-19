@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Pelicula } from 'src/app/modelos/Pelicula';
 
 @Component({
   selector: 'app-detalle-pelicula',
@@ -8,7 +7,7 @@ import { Pelicula } from 'src/app/modelos/Pelicula';
 })
 export class DetallePeliculaComponent implements OnInit {
 
-  @Input() pelicula: Pelicula|undefined;
+  @Input() pelicula:any;
 
   constructor() { }
 

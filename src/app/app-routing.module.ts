@@ -7,6 +7,7 @@ import { PeliculaAltaComponent } from './componentes/peliculas/pelicula-alta/pel
 
 const routes: Routes = [
   // { path: '', redirectTo: 'bienvenido', pathMatch: 'full' },
+  { path: '', redirectTo: 'busqueda', pathMatch: 'full' },
   { path: 'busqueda', component: BusquedaComponent },
   { path: 'actor/alta', component: ActorAltaComponent },
   { path: 'peliculas/alta', component: PeliculaAltaComponent },

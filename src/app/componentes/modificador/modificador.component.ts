@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Actor } from 'src/app/modelos/Actor';
-import { Pelicula } from 'src/app/modelos/Pelicula';
 import { PeliculasService } from 'src/app/servicios/peliculas.service';
 import { FotosService } from 'src/app/servicios/fotos.service';
 

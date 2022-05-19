@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Actor } from 'src/app/modelos/Actor';
-import { Pelicula } from 'src/app/modelos/Pelicula';
 import { PeliculasService } from 'src/app/servicios/peliculas.service';
 import { FotosService } from 'src/app/servicios/fotos.service';
 
@@ -12,10 +10,10 @@ import { FotosService } from 'src/app/servicios/fotos.service';
 })
 export class PeliculaAltaComponent implements OnInit {
 
-  pelicula:Pelicula|undefined;
+  pelicula:any;
 
   forma !: FormGroup;
-  actor:Actor|undefined;
+  actor:any;
   file:File|any;
   added:boolean = false;
 

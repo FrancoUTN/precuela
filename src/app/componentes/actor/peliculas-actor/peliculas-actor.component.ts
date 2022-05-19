@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { PeliculasService } from 'src/app/servicios/peliculas.service';
-import { Pelicula } from 'src/app/modelos/Pelicula';
 
 @Component({
   selector: 'app-peliculas-actor',

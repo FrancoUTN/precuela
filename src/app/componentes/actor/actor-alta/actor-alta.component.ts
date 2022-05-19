@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Actor } from 'src/app/modelos/Actor';
 import { ActoresService } from 'src/app/servicios/actores.service';
 
 @Component({
@@ -12,7 +11,7 @@ export class ActorAltaComponent implements OnInit {
 
   pais:any;
   forma !: FormGroup;
-  actor:Actor|undefined;
+  actor:any;
   added:boolean = false;
 
   public constructor(

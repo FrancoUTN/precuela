@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { Actor } from 'src/app/modelos/Actor';
 import { Pelicula } from 'src/app/modelos/Pelicula';
 import { PeliculasService } from 'src/app/servicios/peliculas.service';
+import { FotosService } from 'src/app/servicios/fotos.service';
 
 @Component({
   selector: 'app-pelicula-alta',
@@ -15,11 +16,13 @@ export class PeliculaAltaComponent implements OnInit {
 
   forma !: FormGroup;
   actor:Actor|undefined;
+  file:File|any;
   added:boolean = false;
 
   public constructor(
     private fb: FormBuilder,
-    private peliculasService: PeliculasService
+    private peliculasService: PeliculasService,
+    private fotosService: FotosService
     ) {}
 
   ngOnInit(): void {
@@ -28,7 +31,7 @@ export class PeliculaAltaComponent implements OnInit {
       'tipo': ['', Validators.required],
       'fechaEstreno': ['', Validators.required],
       // 'cantidadPublico': ['', [Validators.required, Validators.min(100), Validators.max(500)]],
-      'cantidadPublico': ['', Validators.required]
+      'cantidadPublico': ['', Validators.required],
     });
   }
 
@@ -37,9 +40,18 @@ export class PeliculaAltaComponent implements OnInit {
     obj.actor = this.actor;
     this.pelicula = obj;
 
-    this.peliculasService.agregar(this.pelicula);
+    this.peliculasService.agregar(this.pelicula).then(
+      docRef => {
+        this.fotosService.subir(docRef.id, this.file);
 
-    this.added = true;
+        this.added = true;
+      }
+    );
   }
 
+  uploadFile(event:any) {
+    if (event.target.files.length > 0) {
+      this.file = event.target.files[0];
+    }
+  }
 }

@@ -51,15 +51,16 @@
                                 Valid last name is required.
                                 </div>
                             </div>
+                            <div class="col-12">
+                                <label for="lastName" class="form-label">Foto</label>
+                                <input type="file" class="form-control" (change)="uploadFile($event)"/>
+                            </div>
                             <div class="col-12" *ngIf="this.actor">
                                 <label for="address" class="form-label">Actor</label>
                                 <input
                                     type="text" class="form-control" disabled
-                                     placeholder="{{actor.nombre}}"
+                                    placeholder="{{actor.nombre}}"
                                 >
-                                <div class="invalid-feedback">
-                                Nacionalidad requerida.
-                                </div>
                             </div>
         
                             <!-- <div>

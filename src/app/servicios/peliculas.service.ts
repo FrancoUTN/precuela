@@ -24,6 +24,6 @@ export class PeliculasService {
   }
 
   agregar(data: any) {
-    this.coleccion.add(data);
+    return this.coleccion.add(data);
   }
 }

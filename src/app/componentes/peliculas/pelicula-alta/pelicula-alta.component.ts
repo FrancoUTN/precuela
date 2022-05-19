@@ -42,9 +42,12 @@ export class PeliculaAltaComponent implements OnInit {
 
     this.peliculasService.agregar(this.pelicula).then(
       docRef => {
-        this.fotosService.subir(docRef.id, this.file);
-
-        this.added = true;
+        this.fotosService.subir(docRef.id, this.file).then(
+          () => {
+            this.peliculasService.modificar(docRef.id)
+            this.added = true
+          }
+        );
       }
     );
   }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { AngularFireStorage, AngularFireStorageReference } from '@angular/fire/compat/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,10 @@ export class FotosService {
   constructor(private storage: AngularFireStorage) { }
 
   subir(filePath:string, file:File) {
-    this.storage.upload(filePath, file);
+    return this.storage.upload(filePath, file);
+  }
+
+  bajar(filePath:string):AngularFireStorageReference {
+    return this.storage.ref(filePath);
   }
 }

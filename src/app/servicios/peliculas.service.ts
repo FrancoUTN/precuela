@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { FotosService } from 'src/app/servicios/fotos.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class PeliculasService {
   coleccion:AngularFirestoreCollection<any>;
   items:Array<any> = [];
 
-  constructor(private angularFirestore: AngularFirestore) {
+  constructor(private angularFirestore: AngularFirestore, private fotosService: FotosService) {
     this.coleccion = angularFirestore.collection('peliculas');
   }
 
@@ -23,7 +24,23 @@ export class PeliculasService {
     );
   }
 
+  // retornarColeccion() {
+  //   return this.coleccion.get();
+  // }
+
   agregar(data: any) {
     return this.coleccion.add(data);
+  }
+  
+  modificar(path: string) {  
+    let ref = this.fotosService.bajar(path);
+
+    ref.getDownloadURL().subscribe(
+      url => {
+        this.coleccion.doc(path).update(
+           {foto:url}
+         );
+      }
+    );
   }
 }

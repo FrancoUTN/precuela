@@ -13,7 +13,7 @@ export class ActorAltaComponent implements OnInit {
   pais:any;
   forma !: FormGroup;
   actor:Actor|undefined;
-  // actor:any;
+  added:boolean = false;
 
   public constructor(
     private fb: FormBuilder,
@@ -42,6 +42,8 @@ export class ActorAltaComponent implements OnInit {
 
     // this.actoresService.agregar(this.actor).subscribe(response => {console.log(response)});
     this.actoresService.agregar(this.actor);
+
+    this.added = true;
   }
 
   // CUSTOM VALIDATOR

@@ -9,18 +9,13 @@ import { Pelicula } from 'src/app/modelos/Pelicula';
 })
 export class BusquedaComponent implements OnInit {
 
-  jsonPeliculas: Array<Pelicula> = [];
+  peliculas: Array<Pelicula> = [];
   pelicula: Pelicula|undefined;
 
   constructor(private peliculasService: PeliculasService) { }
 
   ngOnInit(): void {    
-    this.peliculasService.todas().subscribe(
-        t => {
-          this.jsonPeliculas = t;
-          // console.log(this.jsonPeliculas);
-        }
-      );
+    this.peliculasService.llenarLista(this.peliculas);
   }
 
 }

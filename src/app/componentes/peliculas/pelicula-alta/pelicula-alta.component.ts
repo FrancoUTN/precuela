@@ -15,6 +15,7 @@ export class PeliculaAltaComponent implements OnInit {
 
   forma !: FormGroup;
   actor:Actor|undefined;
+  added:boolean = false;
 
   public constructor(
     private fb: FormBuilder,
@@ -23,27 +24,22 @@ export class PeliculaAltaComponent implements OnInit {
 
   ngOnInit(): void {
     this.forma = this.fb.group({
-      // 'id': ['4', [Validators.required]],
       'nombre': ['', Validators.required],
       'tipo': ['', Validators.required],
-      // 'pais': ['', Validators.required],
-      // 'edad': ['', [Validators.required, Validators.min(18), Validators.max(99)]],
-      // 'sexo': ['', Validators.required]
+      'fechaEstreno': ['', Validators.required],
+      // 'cantidadPublico': ['', [Validators.required, Validators.min(100), Validators.max(500)]],
+      'cantidadPublico': ['', Validators.required]
     });
   }
 
-  public aceptar(): void {
-    // console.log(this.forma.getRawValue());
-    
+  public aceptar(): void {    
     let obj = this.forma.getRawValue();
+    obj.actor = this.actor;
+    this.pelicula = obj;
 
-    // obj.pais = this.pais;
+    this.peliculasService.agregar(this.pelicula);
 
-    // this.actor = obj;
-
-    // console.log(this.actor);
-
-    // this.actoresService.agregar(this.actor);
+    this.added = true;
   }
 
 }

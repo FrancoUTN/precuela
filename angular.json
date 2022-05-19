@@ -106,6 +106,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "precuela:build:production",
+            "firebaseProject": "simulacro-6bb27",
+            "firebaseHostingSite": "simulacro-6bb27"
+          }
         }
       }
     }

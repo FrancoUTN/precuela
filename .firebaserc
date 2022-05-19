@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "simulacro-6bb27": {
+      "hosting": {
+        "precuela": [
+          "simulacro-6bb27"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "simulacro-6bb27"
+  }
+}

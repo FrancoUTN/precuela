@@ -41,7 +41,7 @@ export class ActorAltaComponent implements OnInit {
     this.actor = obj;
 
     // this.actoresService.agregar(this.actor).subscribe(response => {console.log(response)});
-    this.actoresService.agregar(this.actor).subscribe();
+    this.actoresService.agregar(this.actor);
   }
 
   // CUSTOM VALIDATOR
